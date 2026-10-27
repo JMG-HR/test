@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JMG | بوابة الموارد البشرية</title>
+<link rel="preconnect" href="https://script.google.com">
+<link rel="preconnect" href="https://script.googleusercontent.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  (function(){try{var d=document.documentElement,l=localStorage.getItem('jmg_lang')||'ar';d.lang=l;d.dir=l==='ar'?'rtl':'ltr';d.setAttribute('data-theme','dark');}catch(e){}})();
+</script>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main">
+    <div class="topbar" id="topbar"></div>
+
+    <section class="hero">
+      <div class="hero-row">
+        <div class="reveal">
+          <h1 data-i18n="nav_mypay">حضوري ومرتبي</h1>
+          <p data-i18n="mypay_sub">حضورك وانصرافك ومرتبك والخصومات في مكان واحد. ده عرض للقراءة بس.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="content">
+      <section class="card reveal">
+        <div class="card-h">
+          <div><h3 id="empName"></h3><div class="sub" id="empMeta"></div></div>
+          <div class="field" style="min-width:180px"><label for="month" data-i18n="f_month">الشهر</label><input class="input" id="month" type="month"></div>
+        </div>
+        <p class="hint" data-i18n="readonly_note">عرض للقراءة بس، مفيش تعديل ولا تحميل.</p>
+        <div id="empView" >
+          
+          <div class="sum-grid" id="sum"></div>
+          <p class="note pend" id="noData" hidden data-i18n="no_data_note"></p>
+          <div class="tbl-wrap">
+            <table class="tbl" style="min-width:820px"><thead><tr id="dayHead"></tr></thead><tbody id="dayBody"></tbody></table>
+          </div>
+        </div>
+      </section>
+
+      <section class="card reveal">
+        <div class="card-h"><h3 data-i18n="msn_title">المأموريات</h3></div>
+        <div class="tbl-wrap">
+          <table class="tbl" style="min-width:560px">
+            <thead><tr><th data-i18n="th_date">التاريخ</th><th data-i18n="col_area">المنطقة / المشروع</th><th data-i18n="col_amount">المبلغ</th><th data-i18n="col_notes">ملاحظات</th><th data-i18n="col_link">رابط الموقع</th></tr></thead>
+            <tbody id="msnBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/payroll.js"></script>
+<script src="js/attview.js"></script>
+<script src="js/mypay.js"></script>
+</body>
+</html>
