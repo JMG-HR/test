@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JMG | بوابة الموارد البشرية</title>
+<link rel="preconnect" href="https://script.google.com">
+<link rel="preconnect" href="https://script.googleusercontent.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo-icon.png">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  (function(){try{var d=document.documentElement,l=localStorage.getItem('jmg_lang')||'ar';d.lang=l;d.dir=l==='ar'?'rtl':'ltr';d.setAttribute('data-theme','dark');}catch(e){}})();
+</script>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="app">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main class="main">
+    <div class="topbar" id="topbar"></div>
+
+    <section class="hero">
+      <div class="hero-row">
+        <div class="reveal">
+          <h1 data-i18n="nav_finance">المالية</h1>
+          <p data-i18n="fin_sub">مرتبات الشهر وخصوماتها وسلفها وأوفر تايمها في مكان واحد.</p>
+        </div>
+        <div class="hero-actions reveal"><button class="btn btn-white" id="finExport" type="button" hidden></button></div>
+      </div>
+    </section>
+
+    <div class="content">
+      <section class="card reveal">
+        <div class="card-h"><div><h3 data-i18n="fin_opts">خيارات الحساب</h3><div class="sub" id="periodTxt"></div></div><span class="hint" id="roNote" hidden data-i18n="fin_readonly"></span></div>
+        <div class="grid3">
+          <div class="field"><label for="month" data-i18n="f_month">الشهر</label><input class="input" id="month" type="month"></div>
+          <div class="field"><label for="dept" data-i18n="f_ex_dept">القسم</label><select class="input" id="dept"></select></div>
+          <div class="field" style="align-content:end;gap:8px">
+            <label class="check"><input type="checkbox" id="otInc" checked><span class="box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span data-i18n="f_ot_include">ضيف الأوفر تايم على المرتب</span></label>
+            <label class="check"><input type="checkbox" id="otOff"><span class="box"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></span><span data-i18n="f_ot_offset">اخصم التأخيرات من الأوفر تايم</span></label>
+          </div>
+        </div>
+      </section>
+
+      <div class="sum-grid" id="cards"></div>
+
+      <div class="split even">
+        <section class="card reveal">
+          <div class="card-h"><h3 data-i18n="fin_by_dept">حسب القسم</h3></div>
+          <div class="tbl-wrap"><table class="tbl" style="min-width:520px"><thead id="deptHead"></thead><tbody id="deptBody"></tbody></table></div>
+        </section>
+        <section class="card reveal">
+          <div class="card-h"><h3 data-i18n="fin_top">أكتر الخصومات</h3></div>
+          <div class="tbl-wrap"><table class="tbl" style="min-width:420px"><thead id="topHead"></thead><tbody id="topBody"></tbody></table></div>
+        </section>
+      </div>
+
+      <div class="split even">
+        <section class="card reveal">
+          <div class="card-h"><h3 data-i18n="fin_adv_table">السلف المتبقية</h3></div>
+          <div class="tbl-wrap"><table class="tbl" style="min-width:420px"><thead id="advHead"></thead><tbody id="advBody"></tbody></table></div>
+        </section>
+        <section class="card reveal">
+          <div class="card-h"><h3 data-i18n="fin_ot_table">الأوفر تايم</h3></div>
+          <div class="tbl-wrap"><table class="tbl" style="min-width:420px"><thead id="otHead"></thead><tbody id="otBody"></tbody></table></div>
+        </section>
+      </div>
+
+      <section class="card reveal">
+        <div class="card-h"><h3 data-i18n="fin_all">كشف المرتبات</h3></div>
+        <div class="tbl-wrap"><table class="tbl" style="min-width:900px"><thead id="allHead"></thead><tbody id="allBody"></tbody></table></div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/payroll.js"></script>
+<script src="js/attview.js"></script>
+<script src="js/finance.js"></script>
+</body>
+</html>
